@@ -4,6 +4,7 @@ import 'package:virtuohero/pages/mentor_page.dart';
 import 'package:virtuohero/pages/profile_page.dart';
 import 'package:virtuohero/pages/roadmap_page.dart';
 import 'package:virtuohero/pages/scrum_page.dart';
+import 'package:virtuohero/widgets/customappbar.dart';
 
 
 class MainPage extends StatefulWidget {
@@ -34,6 +35,7 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: _pages[_selectedIndex],
 
       //Bottom NavBar
