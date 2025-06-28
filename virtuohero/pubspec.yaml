@@ -11,8 +11,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
+<<<<<<< HEAD
   google_nav_bar: ^5.0.7
   flutter_spinbox: ^0.5.2
+=======
+>>>>>>> b306c9c6e98cc7a476b73c5e1e6ce59317cfd0a9
 
 dev_dependencies:
   flutter_test:
@@ -24,3 +27,15 @@ flutter:
 
   assets:
     - assets/logo.png
+
+  fonts:
+    - family: Afacad
+      fonts:
+        - asset: assets/fonts/Afacad-Regular.ttf
+        - asset: assets/fonts/Afacad-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Afacad-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Afacad-BoldItalic.ttf
+          weight: 700
+          style: italic

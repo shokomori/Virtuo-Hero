@@ -10,9 +10,14 @@ class VirtuoHeroApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: OpeningPage(),
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Afacad', 
+        useMaterial3: true,    
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+      ),
+      home: const OpeningPage(),
     );
   }
 }
