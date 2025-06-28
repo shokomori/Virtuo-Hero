@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import '../app_styles.dart';
 import '../widgets/virtuostreak.dart';
 import '../widgets/scrumbutton.dart';
-import '../widgets/trend_scroll.dart'; 
+import '../widgets/trend_scroll.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final VoidCallback onScrumTap; // ✅ accept the function
+
+  const HomePage({super.key, required this.onScrumTap});
 
   @override
   Widget build(BuildContext context) {
@@ -45,17 +47,17 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.only(right: 10, top: 10),
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 10, top: 10),
                       child: Align(
                         alignment: Alignment.topRight,
                         child: Column(
                           children: [
-                            VirtuoStreak(),
-                            SizedBox(height: 0),
-                            Text("69", style: AppTextStyles.streaknum),
-                            SizedBox(height: 2),
-                            Scrumbutton()
+                            const VirtuoStreak(),
+                            const SizedBox(height: 0),
+                            const Text("69", style: AppTextStyles.streaknum),
+                            const SizedBox(height: 2),
+                            Scrumbutton(onPressed: onScrumTap), // ✅ fixed
                           ],
                         ),
                       ),
