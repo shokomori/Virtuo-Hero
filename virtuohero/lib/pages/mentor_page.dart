@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:virtuohero/app_styles.dart';
 import 'package:virtuohero/class/message.dart';
-=======
-import '../app_styles.dart';
-import '../widgets/customappbar.dart';
->>>>>>> c1514e1a16ada99860f3a3adf0792aabbdd8e106
 
 class MentorPage extends StatefulWidget {
   const MentorPage({super.key});
