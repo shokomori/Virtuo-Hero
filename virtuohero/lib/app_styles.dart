@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
+  // Your specified color palette
+  static const primary = Color(0xFF00C1C8);        // Teal
+  static const secondary = Color(0xFF5CE1E6);      // Light Teal
+  static const accent = Color(0xFF74FAFF);         // Very Light Teal
+  static const white = Color(0xFFFFFFFF);          // Pure White
+  static const cream = Color(0xFFFFFDF3);          // Cream/Off-white
+  static const darkGray = Color(0xFF414040);       // Dark Gray
   static const backgroundColor = Color(0xFFEFF2F6);
   static const buttonColor = Color(0xFF00D9E5);
 }
@@ -53,6 +60,19 @@ class AppTextStyles {
   static const buttonText = TextStyle(
     color: Color(0xFF414040),
     fontWeight: FontWeight.bold,
+    fontFamily: 'Afacad',
+  );
+
+  static const bodyMedium = TextStyle(
+    fontSize: 15, // 15
+    color: AppColors.darkGray,
+    fontFamily: 'Afacad',
+  );
+
+  static const heading3 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: AppColors.darkGray,
     fontFamily: 'Afacad',
   );
 }
