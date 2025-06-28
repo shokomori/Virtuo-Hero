@@ -94,9 +94,12 @@ class _MentorPageState extends State<MentorPage> {
                     
                   ),
                   SizedBox(width: 8,),
-                  IconButton(
-                    onPressed: () {}, 
-                    icon: Icon(Icons.send_rounded)
+                  Padding(
+                    padding: const EdgeInsets.all(15),
+                    child: GestureDetector(
+                      child: Icon(Icons.send_rounded),
+                      onTap: () {},
+                    ),
                   )
                 ],
               ),

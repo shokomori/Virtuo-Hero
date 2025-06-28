@@ -40,7 +40,7 @@ class _MainPageState extends State<MainPage> {
 
       //Bottom NavBar
         bottomNavigationBar: BottomNavigationBar(
-          iconSize: 24,
+          iconSize: 30,
           selectedFontSize: 14,
           selectedItemColor: Color(0xFF64B5F6),
           unselectedItemColor: Color(0xFF4F4F4F),
