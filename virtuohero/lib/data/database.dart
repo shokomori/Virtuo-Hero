@@ -8,6 +8,7 @@ class VirtuoHeroDatabase {
   List<String> selectedInterests = []; 
   String? skills;
   String? timeCommitments;
+  bool? hasRoadmap;
 
   // Save user roadmap data to Hive
   Future<void> saveRoadmapData() async {

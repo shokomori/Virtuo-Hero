@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:virtuohero/data/database.dart';
+import 'package:virtuohero/pages/subpages/coming_soon_page.dart';
 import '../../app_styles.dart';
 
 class CreateroadmapPage extends StatefulWidget {
@@ -102,19 +103,13 @@ class _CreateroadmapPageState extends State<CreateroadmapPage> {
 
     // Save to Hive database
     await db.saveRoadmapData();
-
     
-    // TODO: Process the collected data and generate roadmap
-    // Data available:
-    // - selectedMbtiType
-    // - selectedLearningStyles
-    // - selectedInterests
-    // - skillsController.text
-    // - selectedTimeCommitment
-
-    
-    
-    Navigator.of(context).pop();
+    // Direct to coming soon page
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => ComingSoonPage(),
+      ),
+    );
   }
 
   @override

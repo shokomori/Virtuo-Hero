@@ -5,6 +5,7 @@ import 'package:virtuohero/pages/mentor_page.dart';
 import 'package:virtuohero/pages/profile_page.dart';
 import 'package:virtuohero/pages/roadmap_page.dart';
 import 'package:virtuohero/pages/scrum_page.dart';
+import 'package:virtuohero/pages/subpages/coming_soon_page.dart';
 import 'package:virtuohero/widgets/customappbar.dart';
 
 
@@ -23,7 +24,7 @@ class _MainPageState extends State<MainPage> {
     const RoadmapPage(),
     const MentorPage(),
     const ScrumPage(),
-    const ProfilePage()
+    const ComingSoonPage()
   ];
 
   // when the user taps on the bottom nav bar
