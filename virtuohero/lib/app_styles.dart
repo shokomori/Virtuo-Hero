@@ -18,6 +18,17 @@ class AppTextStyles {
     fontFamily: 'Afacad',
   );
 
+  static const appNameheader = TextStyle(
+    fontSize: 35,
+    fontFamily: 'Afacad',
+  );
+
+  static const welcome = TextStyle(
+    fontSize: 35,
+    fontWeight: FontWeight.w600,
+    fontFamily: 'Afacad',
+  );
+
   static const virtColor = TextStyle(
     color: AppColors.buttonColor,
     fontWeight: FontWeight.bold,
@@ -25,20 +36,34 @@ class AppTextStyles {
   );
 
   static const heroColor = TextStyle(
-    color: Color(0xFF414040),
+    color: AppColors.darkGray,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Afacad',
+  );
+
+  static const streakColor = TextStyle(
+    fontSize: 25,
+    color: AppColors.buttonColor,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Afacad',
+  );
+
+  static const virstrColor = TextStyle(
+    fontSize: 25,
+    color: AppColors.darkGray,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
   );
 
   static const bold = TextStyle(
-    color: Color(0xFF414040),
+    color: AppColors.darkGray,
     fontSize: 20,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
   );
 
   static const fpass = TextStyle(
-    color: Color(0xFF414040),
+    color: AppColors.darkGray,
     fontSize: 15,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
@@ -46,19 +71,19 @@ class AppTextStyles {
 
   static const subtitle = TextStyle(
     fontSize: 17,
-    color: Color(0xFF414040),
+    color: AppColors.darkGray,
     fontWeight: FontWeight.w500,
     fontFamily: 'Afacad',
   );
 
   static const bottomText = TextStyle(
     fontSize: 17,
-    color: Color(0xFF414040),
+    color: AppColors.darkGray,
     fontFamily: 'Afacad',
   );
 
   static const buttonText = TextStyle(
-    color: Color(0xFF414040),
+    color: AppColors.darkGray,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
   );
