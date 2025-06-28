@@ -12,15 +12,15 @@ class OpeningPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const Spacer(flex: 2),
-            Center(child: Image.asset('assets/logo.png',height: 150,),),
-            const SizedBox(height: 20),const AppName(),const SizedBox(height: 8),
+            const Spacer(flex: 3),
+            Center(child: Image.asset('assets/logo.png',height: 200,),),
+            const SizedBox(height: 0),const AppName(),const SizedBox(height: 8),
             Text('Launch Your Virtual Journey',style: AppTextStyles.subtitle,),
             const SizedBox(height: 30),
             const GetStartedButton(),
             const Spacer(flex: 3),
             const Padding(
-              padding: EdgeInsets.only(bottom: 20),
+              padding: EdgeInsets.only(bottom: 10),
               child: Text(
                 'Tether',
                 style: AppTextStyles.bottomText,

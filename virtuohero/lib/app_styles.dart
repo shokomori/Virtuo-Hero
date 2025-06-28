@@ -7,7 +7,7 @@ class AppColors {
 
 class AppTextStyles {
   static const appName = TextStyle(
-    fontSize: 22,
+    fontSize: 30,
     fontFamily: 'Afacad',
   );
 
@@ -18,25 +18,40 @@ class AppTextStyles {
   );
 
   static const heroColor = TextStyle(
-    color: Colors.black,
+    color: Color(0xFF414040),
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Afacad',
+  );
+
+  static const bold = TextStyle(
+    color: Color(0xFF414040),
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Afacad',
+  );
+
+  static const fpass = TextStyle(
+    color: Color(0xFF414040),
+    fontSize: 15,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
   );
 
   static const subtitle = TextStyle(
-    fontSize: 14,
-    color: Colors.black54,
+    fontSize: 17,
+    color: Color(0xFF414040),
+    fontWeight: FontWeight.w500,
     fontFamily: 'Afacad',
   );
 
   static const bottomText = TextStyle(
-    fontSize: 12,
-    color: Colors.black54,
+    fontSize: 17,
+    color: Color(0xFF414040),
     fontFamily: 'Afacad',
   );
 
   static const buttonText = TextStyle(
-    color: Colors.white,
+    color: Color(0xFF414040),
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
   );

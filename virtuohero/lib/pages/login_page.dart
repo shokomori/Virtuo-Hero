@@ -40,6 +40,7 @@ class _SecondPageState extends State<LoginPage> {
     );
 
     Future.delayed(const Duration(milliseconds: 500), () {
+      if (!mounted) return; // ✅ SAFETY CHECK
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const MainPage()),
@@ -60,14 +61,14 @@ class _SecondPageState extends State<LoginPage> {
             child: Column(
               children: [
                 const SizedBox(height: 100),
-                Center(child: Image.asset('assets/logo.png', height: 150)),
-                const SizedBox(height: 20),
+                Center(child: Image.asset('assets/logo.png', height: 200)),
+                const SizedBox(height: 0),
                 const AppName(),
                 const SizedBox(height: 20),
-                Text('LOGIN', style: AppTextStyles.subtitle),
-                const SizedBox(height: 30),
+                Text('LOGIN', style: AppTextStyles.bold),
+                const SizedBox(height: 20),
 
-                // 👉 Form Section
+                // Form Section
                 Form(
                   key: _formKey,
                   child: Column(
@@ -76,7 +77,7 @@ class _SecondPageState extends State<LoginPage> {
                       Center(
                         child: SizedBox(
                           width: 292,
-                          height: 50,
+                          height: 30,
                           child: TextFormField(
                             focusNode: _emailFocus,
                             controller: _emailController,
@@ -85,7 +86,7 @@ class _SecondPageState extends State<LoginPage> {
                             decoration: InputDecoration(
                               hintText: 'Email/Username',
                               contentPadding:
-                                  const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                  const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
                               ),
@@ -114,7 +115,7 @@ class _SecondPageState extends State<LoginPage> {
                       Center(
                         child: SizedBox(
                           width: 292,
-                          height: 50,
+                          height: 30,
                           child: TextFormField(
                             controller: _passwordController,
                             obscureText: true,
@@ -122,7 +123,7 @@ class _SecondPageState extends State<LoginPage> {
                             decoration: InputDecoration(
                               hintText: 'Password',
                               contentPadding:
-                                  const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                                  const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
                               ),
@@ -145,12 +146,12 @@ class _SecondPageState extends State<LoginPage> {
                         ),
                       ),
 
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 10),
 
                       // Login Button
                       SizedBox(
                         width: 292,
-                        height: 50,
+                        height: 30,
                         child: ElevatedButton(
                           onPressed: _handleLogin,
                           style: ElevatedButton.styleFrom(
@@ -169,11 +170,21 @@ class _SecondPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
+
+                      SizedBox(
+                        width: 292,
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            'Forgot Password?',
+                            style: AppTextStyles.fpass,
+                            textAlign: TextAlign.right,
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
-
-                const SizedBox(height: 40),
               ],
             ),
           ),
