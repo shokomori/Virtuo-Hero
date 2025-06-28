@@ -12,6 +12,7 @@ class AppColors {
   static const buttonColor = Color(0xFF00D9E5);
   static const mediumgray = Color(0xFF818181);
   static const blazeOrange = Color(0xFFFF5C02);
+  static const black = Color.fromARGB(255, 0, 0, 0);
 }
 
 class AppTextStyles {
@@ -28,7 +29,7 @@ class AppTextStyles {
 
   static const welcome = TextStyle(
     fontSize: 35,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w500,
     fontFamily: 'Afacad',
   );
 
@@ -115,16 +116,17 @@ class AppTextStyles {
   );
 
   static const darkGray = TextStyle(
-    fontSize: 10, 
+    fontSize: 12, 
     color: AppColors.darkGray,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w700,
     fontFamily: 'Afacad',
+    height: 1
   );
 
   static const streak = TextStyle(
-    fontSize: 10, 
+    fontSize: 12, 
     color: AppColors.blazeOrange,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w700,
     fontFamily: 'Afacad',
   );
 

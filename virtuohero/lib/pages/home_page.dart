@@ -61,11 +61,12 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: 5,
+                      top: 3,
+                      left: 12,
                       child: Image.asset(
                         'assets/mascot.png',
                         height: 150,
-                        width: 170,
+                        width: 150,
                       ),
                     ),
                   ],

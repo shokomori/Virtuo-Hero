@@ -9,7 +9,7 @@ class Scrumbutton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200,
+      width: 180,
       height: 40,
       child: ElevatedButton(
         onPressed: () {
@@ -19,13 +19,19 @@ class Scrumbutton extends StatelessWidget {
           );
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.buttonColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+        backgroundColor: AppColors.buttonColor,
+        padding: EdgeInsets.zero, // removes default padding
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide( // ✅ use side instead of Border.all
+            color: AppColors.black,
+            width: 1, // Adjust width as needed
           ),
         ),
+      ),
+
           child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 1, vertical: 1),
+          padding: EdgeInsets.zero,
           child: stbuttext(),
         ),
       ),
