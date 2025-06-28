@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'opening_page.dart';
+import 'pages/opening_page.dart';
 
 void main() {
   runApp(const VirtuoHeroApp());

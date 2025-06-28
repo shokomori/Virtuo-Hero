@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_styles.dart';
+import '../app_styles.dart';
 import 'second_page.dart';
 
 class OpeningPage extends StatelessWidget {
