@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../app_styles.dart';
-import 'second_page.dart';
+import 'login_page.dart';
 
 class OpeningPage extends StatelessWidget {
   const OpeningPage({super.key});
@@ -70,7 +70,7 @@ class GetStartedButton extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SecondPage()),
+              MaterialPageRoute(builder: (context) => const LoginPage()),
             );
           },
           style: ElevatedButton.styleFrom(

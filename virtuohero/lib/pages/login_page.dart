@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:virtuohero/pages/main_page.dart';
 import '../app_styles.dart';
 import 'opening_page.dart';
 
-class SecondPage extends StatefulWidget {
-  const SecondPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SecondPage> createState() => _SecondPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SecondPageState extends State<SecondPage> {
+class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -33,12 +34,12 @@ class _SecondPageState extends State<SecondPage> {
   }
 
   void _handleLogin() {
-    if (_formKey.currentState!.validate()) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Login successful!')),
+    setState(() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const MainPage()),
       );
-      // Optional: Navigate to another page
-    }
+    });
   }
 
   @override
