@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:virtuohero/app_styles.dart';
 import 'package:virtuohero/pages/home_page.dart';
 import 'package:virtuohero/pages/mentor_page.dart';
 import 'package:virtuohero/pages/profile_page.dart';
@@ -42,8 +43,8 @@ class _MainPageState extends State<MainPage> {
         bottomNavigationBar: BottomNavigationBar(
           iconSize: 30,
           selectedFontSize: 14,
-          selectedItemColor: Color(0xFF64B5F6),
-          unselectedItemColor: Color(0xFF4F4F4F),
+          selectedItemColor: AppColors.primary,
+          unselectedItemColor: AppColors.darkGray,
 
           currentIndex: _selectedIndex,
           onTap: (index) {

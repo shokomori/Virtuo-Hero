@@ -16,6 +16,7 @@ class _RoadmapPageState extends State<RoadmapPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Image.asset('assets/mascot.png', height: 200),
             Text('No roadmap yet'),
             ElevatedButton(
               onPressed: () {
