@@ -107,7 +107,7 @@ class AppTextStyles {
   );
 
   static const streaknum = TextStyle(
-    color: AppColors.mediumgray,
+    color: AppColors.darkGray,
     fontSize: 40,
     fontWeight: FontWeight.w900,
     fontFamily: 'Afacad',

@@ -27,6 +27,7 @@ flutter:
 
   assets:
     - assets/logo.png
+    - assets/mascot.png
 
   fonts:
   - family: Afacad
