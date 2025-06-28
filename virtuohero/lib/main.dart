@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'pages/opening_page.dart';
 
-void main() {
+void main() async {
+  
+  // init the hive
+  await Hive.initFlutter();
+
+  // open storage
+  var storage = await Hive.openBox('storage');
+
   runApp(const VirtuoHeroApp());
 }
 

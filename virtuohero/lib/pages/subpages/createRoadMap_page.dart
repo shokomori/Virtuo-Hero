@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:virtuohero/data/database.dart';
 import '../../app_styles.dart';
 
 class CreateroadmapPage extends StatefulWidget {
@@ -9,9 +10,13 @@ class CreateroadmapPage extends StatefulWidget {
 }
 
 class _CreateroadmapPageState extends State<CreateroadmapPage> {
+  // Connect to database
+  VirtuoHeroDatabase db = VirtuoHeroDatabase();
+
+  //variables
   String? selectedMbtiType;
   List<String> selectedLearningStyles = [];
-  List<String> selectedInterests = []; // Fixed: separate list for interests
+  List<String> selectedInterests = []; 
   final TextEditingController interestsController = TextEditingController();
   final TextEditingController skillsController = TextEditingController();
   String? selectedTimeCommitment;
@@ -42,7 +47,7 @@ class _CreateroadmapPageState extends State<CreateroadmapPage> {
     super.dispose();
   }
 
-  void submit() {
+  void submit() async {
     // Validate form
     if (selectedMbtiType == null) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -87,6 +92,17 @@ class _CreateroadmapPageState extends State<CreateroadmapPage> {
         backgroundColor: AppColors.primary,
       ),
     );
+
+    // put the values to the db
+    db.selectedMbtiType = selectedMbtiType;
+    db.selectedLearningStyles = selectedLearningStyles;
+    db.selectedInterests = selectedInterests;
+    db.skills = skillsController.text; 
+    db.timeCommitments = selectedTimeCommitment;
+
+    // Save to Hive database
+    await db.saveRoadmapData();
+
     
     // TODO: Process the collected data and generate roadmap
     // Data available:
@@ -95,6 +111,8 @@ class _CreateroadmapPageState extends State<CreateroadmapPage> {
     // - selectedInterests
     // - skillsController.text
     // - selectedTimeCommitment
+
+    
     
     Navigator.of(context).pop();
   }
