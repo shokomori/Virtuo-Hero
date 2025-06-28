@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:virtuohero/app_styles.dart';
 import 'package:virtuohero/class/message.dart';
+=======
+import '../app_styles.dart';
+import '../widgets/customappbar.dart';
+>>>>>>> c1514e1a16ada99860f3a3adf0792aabbdd8e106
 
 class MentorPage extends StatefulWidget {
   const MentorPage({super.key});
@@ -22,6 +27,7 @@ class _MentorPageState extends State<MentorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: AppColors.white,
       body: Column(
         children: [
@@ -103,6 +109,10 @@ class _MentorPageState extends State<MentorPage> {
           ),
         ],
       )
+=======
+    backgroundColor: AppColors.backgroundColor,
+    appBar: const CustomAppBar()
+>>>>>>> c1514e1a16ada99860f3a3adf0792aabbdd8e106
     );
   }
 }

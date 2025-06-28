@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../app_styles.dart';
 import 'login_page.dart';
+import '../widgets/appname.dart';
 
 class OpeningPage extends StatelessWidget {
   const OpeningPage({super.key});
@@ -33,28 +34,7 @@ class OpeningPage extends StatelessWidget {
   }
 }
 
-class AppName extends StatelessWidget {
-  const AppName({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: AppTextStyles.appName,
-        children: const [
-          TextSpan(
-            text: 'Virtuo',
-            style: AppTextStyles.virtColor,
-          ),
-          TextSpan(
-            text: 'Hero',
-            style: AppTextStyles.heroColor,
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class GetStartedButton extends StatelessWidget {
   const GetStartedButton({super.key});

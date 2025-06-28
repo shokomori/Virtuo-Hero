@@ -10,6 +10,8 @@ class AppColors {
   static const darkGray = Color(0xFF414040);       // Dark Gray
   static const backgroundColor = Color(0xFFEFF2F6);
   static const buttonColor = Color(0xFF00D9E5);
+  static const mediumgray = Color(0xFF818181);
+  static const blazeOrange = Color(0xFFFF5C02);
 }
 
 class AppTextStyles {
@@ -21,6 +23,7 @@ class AppTextStyles {
   static const appNameheader = TextStyle(
     fontSize: 35,
     fontFamily: 'Afacad',
+    height: 1.5
   );
 
   static const welcome = TextStyle(
@@ -46,6 +49,7 @@ class AppTextStyles {
     color: AppColors.buttonColor,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
+    height: 1
   );
 
   static const virstrColor = TextStyle(
@@ -53,6 +57,7 @@ class AppTextStyles {
     color: AppColors.darkGray,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
+    height: 1
   );
 
   static const bold = TextStyle(
@@ -100,4 +105,30 @@ class AppTextStyles {
     color: AppColors.darkGray,
     fontFamily: 'Afacad',
   );
+
+  static const streaknum = TextStyle(
+    color: AppColors.mediumgray,
+    fontSize: 40,
+    fontWeight: FontWeight.w900,
+    fontFamily: 'Afacad',
+    height: 1
+  );
+
+  static const darkGray = TextStyle(
+    fontSize: 10, 
+    color: AppColors.darkGray,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Afacad',
+  );
+
+  static const streak = TextStyle(
+    fontSize: 10, 
+    color: AppColors.blazeOrange,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'Afacad',
+  );
+
+
 }
+
+

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import '../app_styles.dart';
+import '../widgets/customappbar.dart';
+import '../widgets/virtuostreak.dart';
+import '../widgets/scrumbutton.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,19 +10,12 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
+      appBar: const CustomAppBar(),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 30),
-            Row(
-              children: const [
-                SizedBox(width: 20),
-                Image(image: AssetImage('assets/logo.png'), height: 40),
-                AppName(),
-              ],
-            ),
-            const SizedBox(height: 10),
             const Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -27,7 +23,6 @@ class HomePage extends StatelessWidget {
                 style: AppTextStyles.welcome,
               ),
             ),
-
             const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -35,11 +30,11 @@ class HomePage extends StatelessWidget {
                 width: double.infinity,
                 height: 150,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.backgroundColor,
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: AppColors.buttonColor.withOpacity(0.4),
-                    width: 10, 
+                    color: AppColors.primary.withOpacity(0.4),
+                    width: 10,
                   ),
                   boxShadow: [
                     BoxShadow(
@@ -50,13 +45,16 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 child: const Padding(
-                padding: EdgeInsets.only(right: 50, top: 8.0),
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Column(
-                      children: const [
-                        SizedBox(width: 0),
-                        Streak(),
+                  padding: EdgeInsets.only(right: 10, top: 10),
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Column(
+                      children: [
+                        VirtuoStreak(),
+                        SizedBox(height: 0),
+                        Text("69",style: AppTextStyles.streaknum),
+                        SizedBox(height: 2),
+                        Scrumbutton()
                       ],
                     ),
                   ),
@@ -70,48 +68,4 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class AppName extends StatelessWidget {
-  const AppName({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: AppTextStyles.appNameheader,
-        children: const [
-          TextSpan(
-            text: 'Virtuo',
-            style: AppTextStyles.virtColor,
-          ),
-          TextSpan(
-            text: 'Hero',
-            style: AppTextStyles.heroColor,
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Streak extends StatelessWidget {
-  const Streak({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: AppTextStyles.appNameheader,
-        children: const [
-          TextSpan(
-            text: 'Virtuo',
-            style: AppTextStyles.virstrColor,
-          ),
-          TextSpan(
-            text: 'Streak',
-            style: AppTextStyles.streakColor,
-          ),
-        ],
-      ),
-    );
-  }
-}

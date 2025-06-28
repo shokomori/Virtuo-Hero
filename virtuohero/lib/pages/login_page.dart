@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../app_styles.dart';
-import 'opening_page.dart';
 import 'main_page.dart';
+import '../widgets/appname.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
