@@ -92,8 +92,21 @@ class _MentorPageState extends State<MentorPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(height: 100),
-                    Image.asset('assets/mascot.png', height: 200),
-                    Text('Meet VirtouHero, your AI-mentor!', style: AppTextStyles.heading3),
+                    Image.asset('assets/mascot.png', height: 150),
+                    SizedBox(height: 8),
+                    RichText(
+                      text: TextSpan(
+                        style: AppTextStyles.heading3,
+                        children: [
+                          TextSpan(text: 'Hello! I\'m '),
+                          TextSpan(
+                            text: 'VirtouHero', 
+                            style: AppTextStyles.heading3.copyWith(color: AppColors.primary),
+                          ),
+                          TextSpan(text: ', your AI mentor.'),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -188,7 +201,7 @@ class _MentorPageState extends State<MentorPage> {
                               )
                           
                             ),
-                                      child: MarkdownBody( // <--- HERE'S THE CHANGE
+                                      child: MarkdownBody(
                                 data: message.text,
                                 styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
                                   p: AppTextStyles.bodyMedium.copyWith(
