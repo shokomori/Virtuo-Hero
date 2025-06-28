@@ -182,6 +182,31 @@ class _SecondPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
+                        
+                      SizedBox(
+                        width: 292,
+                        child: Center(
+                          child: RichText(
+                            textAlign: TextAlign.center,
+                            text: TextSpan(
+                              style: AppTextStyles.fpass,
+                              children: const [
+                                TextSpan(
+                                  text: "Don't have an account? ",
+                                  style: TextStyle(color: Color(0xFF414040)), // dark gray
+                                ),
+                                TextSpan(
+                                  text: 'Sign up',
+                                  style: TextStyle(
+                                    color: Color(0xFF00B2FF), // light blue
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),                      
                     ],
                   ),
                 ),

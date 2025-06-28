@@ -9,19 +9,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      automaticallyImplyLeading: false,
-      title: Row(
-        children: const [
-          Image(
-            image: AssetImage('assets/logo.png'),
-            height: 40,
-          ),
-          SizedBox(width: 8),
-          AppName(),
-        ],
+    return Center(
+      child: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Image(
+              image: AssetImage('assets/logo.png'),
+              height: 40,
+            ),
+            SizedBox(width: 8),
+            AppName(),
+          ],
+        ),
       ),
     );
   }
