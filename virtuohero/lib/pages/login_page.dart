@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:virtuohero/pages/main_page.dart';
-import '../app_styles.dart';
+import '../../app_styles.dart';
 import 'opening_page.dart';
+import 'main_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginPage> createState() => _SecondPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SecondPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
@@ -20,8 +20,8 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 300), () {
-      FocusScope.of(context).requestFocus(_emailFocus);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+    FocusScope.of(context).requestFocus(_emailFocus);
     });
   }
 
@@ -34,13 +34,19 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleLogin() {
-    setState(() {
+  if (_formKey.currentState!.validate()) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Login successful!')),
+    );
+
+    Future.delayed(const Duration(milliseconds: 500), () {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const MainPage()),
       );
     });
   }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                 Center(child: Image.asset('assets/logo.png', height: 150)),
                 const SizedBox(height: 20),
                 const AppName(),
-                const SizedBox(height: 8),
+                const SizedBox(height: 20),
                 Text('LOGIN', style: AppTextStyles.subtitle),
                 const SizedBox(height: 30),
 
