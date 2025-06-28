@@ -8,7 +8,7 @@ void main() async {
   await Hive.initFlutter();
 
   // open storage
-  var storage = await Hive.openBox('storage');
+  var _storage = await Hive.openBox('storage');
 
   runApp(const VirtuoHeroApp());
 }

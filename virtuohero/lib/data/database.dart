@@ -23,20 +23,11 @@ class VirtuoHeroDatabase {
   // Load user roadmap data from Hive
   Future<void> loadRoadmapData() async {
     final storage = await Hive.openBox('storage');
-    
     selectedMbtiType = storage.get('selectedMbtiType');
     selectedLearningStyles = List<String>.from(storage.get('selectedLearningStyles', defaultValue: []));
     selectedInterests = List<String>.from(storage.get('selectedInterests', defaultValue: []));
     skills = storage.get('skills');
     timeCommitments = storage.get('timeCommitments');
   }
-
-  // TODO: Process the collected data and generate roadmap
-    // Data available:
-    // - selectedMbtiType
-    // - selectedLearningStyles
-    // - selectedInterests
-    // - skills
-    // - timeCommitments
 
 }
