@@ -13,7 +13,6 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.7
   hive_flutter: ^1.1.0
-  flutter_dotenv: ^5.2.1
   google_generative_ai: ^0.4.7
 
 dev_dependencies:
@@ -22,6 +21,7 @@ dev_dependencies:
   flutter_lints: ^6.0.0
   hive_generator: ^2.0.1
   build_runner: ^2.5.4
+  flutter_markdown: ^0.7.0
 
 flutter:
   uses-material-design: true
