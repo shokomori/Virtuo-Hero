@@ -3,6 +3,7 @@ import '../app_styles.dart';
 import '../widgets/virtuostreak.dart';
 import '../widgets/scrumbutton.dart';
 
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
