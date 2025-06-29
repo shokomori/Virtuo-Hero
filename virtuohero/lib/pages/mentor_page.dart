@@ -3,7 +3,6 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:virtuohero/app_styles.dart';
 import 'package:virtuohero/class/message.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class MentorPage extends StatefulWidget {
   const MentorPage({super.key});

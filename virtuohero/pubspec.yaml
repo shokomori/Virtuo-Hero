@@ -14,7 +14,6 @@ dependencies:
   flutter_svg: ^2.0.7
   hive_flutter: ^1.1.0
   google_generative_ai: ^0.4.7
-  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -36,7 +35,6 @@ flutter:
     - assets/mascot3.png
     - assets/mascot4.png
     - assets/flame.svg
-    - .env
 
   fonts:
   - family: Afacad
