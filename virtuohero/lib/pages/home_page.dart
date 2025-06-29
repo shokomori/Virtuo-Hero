@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../app_styles.dart';
 import '../widgets/virtuostreak.dart';
 import '../widgets/scrumbutton.dart';
-import '../widgets/trend_scroll.dart'; 
+import '../widgets/trend_scroll.dart';
 import 'subpages/coming_soon_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -32,211 +32,227 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                'Welcome back!',
-                style: AppTextStyles.welcome,
-              ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Stack(
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      color: AppColors.backgroundColor,
-                      borderRadius: BorderRadius.circular(16),
-                      border: Border.all(
-                        color: AppColors.primary.withOpacity(0.4),
-                        width: 10,
-                      ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 8,
-                          offset: Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 10, top: 10),
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Column(
-                          children: [
-                            const VirtuoStreak(),
-                            const SizedBox(height: 0),
-                            const Text("5", style: AppTextStyles.streaknum),
-                            const SizedBox(height: 2),
-                            Scrumbutton(onPressed: onScrumTap),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text(
+                    'Welcome back!',
+                    style: AppTextStyles.welcome,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Stack(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: AppColors.backgroundColor,
+                          borderRadius: BorderRadius.circular(16),
+                          border: Border.all(
+                            color: AppColors.primary.withOpacity(0.4),
+                            width: 10,
+                          ),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 8,
+                              offset: Offset(0, 4),
+                            ),
                           ],
                         ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 3,
-                    left: 12,
-                    child: Image.asset(
-                      'assets/mascot.png',
-                      height: 150,
-                      width: 150,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 16),
-            Divider(color: AppColors.darkGray.withOpacity(0.3), thickness: 0.8),
-            const SizedBox(height: 7),
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                'Trending!',
-                style: AppTextStyles.welcome,
-              ),
-            ),
-            const SizedBox(height: 10),
-            SizedBox(
-              height: 140,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                children: [
-                  TrendingBox(
-                    label: 'Trend 1',
-                    imagePath: 'assets/mascot4.png',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const ComingSoonPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  const SizedBox(width: 10),
-                  TrendingBox(
-                    label: 'Trend 2',
-                    imagePath: 'assets/mascot3.png',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const ComingSoonPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  const SizedBox(width: 10),
-                  TrendingBox(
-                    label: 'Trend 3',
-                    imagePath: 'assets/mascot2.png',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const ComingSoonPage(),
-                        ),
-                      );
-                    },
-                  ),
-                  const SizedBox(width: 10),
-                  TrendingBox(
-                    label: 'Trend 4',
-                    imagePath: 'assets/mascot.png',
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const ComingSoonPage(),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 16),
-            Divider(color: AppColors.darkGray.withOpacity(0.3), thickness: 0.8),
-            const SizedBox(height: 7),
-            const Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                'Recent Achievements:',
-                style: AppTextStyles.welcome,
-              ),
-            ),
-
-            // Boxed Entries List (customizable)
-            Expanded(
-              child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                itemCount: _scrums.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => _scrumPages[index],
-                        ),
-                      );
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.only(bottom: 16),
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                        color: AppColors.white,
-                        border: Border.all(
-                          color: AppColors.secondary.withOpacity(0.7),
-                          width: 2.0,
-                        ),
-                        borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.08),
-                            spreadRadius: 1,
-                            blurRadius: 4,
-                            offset: const Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                            'assets/trophy.svg',
-                            width: 24,
-                            height: 24,
-                            colorFilter: const ColorFilter.mode(
-                              AppColors.secondary,
-                              BlendMode.srcIn,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 10, top: 10),
+                          child: Align(
+                            alignment: Alignment.topRight,
+                            child: Column(
+                              children: [
+                                const VirtuoStreak(),
+                                const SizedBox(height: 0),
+                                const Text("5", style: AppTextStyles.streaknum),
+                                const SizedBox(height: 2),
+                                Scrumbutton(onPressed: onScrumTap),
+                              ],
                             ),
                           ),
-                          const SizedBox(width: 12),
-                          Text(
-                            _scrums[index],
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.darkGray,
+                        ),
+                      ),
+                      Positioned.fill(
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Image.asset(
+                              'assets/mascot.png',
+                              height: MediaQuery.of(context).size.height * 0.18,
+                              width: MediaQuery.of(context).size.width * 0.35,
+                              fit: BoxFit.contain,
                             ),
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                  );
-                },
-              ),
-            )
-          ],
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Divider(
+                  color: AppColors.darkGray.withOpacity(0.3),
+                  thickness: 0.8,
+                ),
+                const SizedBox(height: 7),
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text(
+                    'Trending!',
+                    style: AppTextStyles.welcome,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                SizedBox(
+                  height: 140,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    children: [
+                      TrendingBox(
+                        label: 'Trend 1',
+                        imagePath: 'assets/mascot4.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const ComingSoonPage(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(width: 10),
+                      TrendingBox(
+                        label: 'Trend 2',
+                        imagePath: 'assets/mascot3.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const ComingSoonPage(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(width: 10),
+                      TrendingBox(
+                        label: 'Trend 3',
+                        imagePath: 'assets/mascot2.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const ComingSoonPage(),
+                            ),
+                          );
+                        },
+                      ),
+                      const SizedBox(width: 10),
+                      TrendingBox(
+                        label: 'Trend 4',
+                        imagePath: 'assets/mascot.png',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const ComingSoonPage(),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Divider(
+                  color: AppColors.darkGray.withOpacity(0.3),
+                  thickness: 0.8,
+                ),
+                const SizedBox(height: 7),
+                const Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text(
+                    'Recent Achievements:',
+                    style: AppTextStyles.welcome,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                SizedBox(
+                  height: 170,
+                  child: ListView.builder(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    itemCount: _scrums.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => _scrumPages[index],
+                            ),
+                          );
+                        },
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 12),
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: AppColors.white,
+                            border: Border.all(
+                              color: AppColors.secondary.withOpacity(0.7),
+                              width: 2.0,
+                            ),
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.08),
+                                spreadRadius: 1,
+                                blurRadius: 4,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/trophy.svg',
+                                width: 24,
+                                height: 24,
+                                colorFilter: const ColorFilter.mode(
+                                  AppColors.secondary,
+                                  BlendMode.srcIn,
+                                ),
+                              ),
+                              const SizedBox(width: 12),
+                              Text(
+                                _scrums[index],
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.darkGray,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
