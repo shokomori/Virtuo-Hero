@@ -10,7 +10,7 @@ class RoadmapPage extends StatefulWidget {
 }
 
 class _RoadmapPageState extends State<RoadmapPage> {
-  bool _hasRoadmap = false;
+  final bool _hasRoadmap = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

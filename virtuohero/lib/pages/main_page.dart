@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:virtuohero/app_styles.dart';
 import 'package:virtuohero/pages/home_page.dart';
 import 'package:virtuohero/pages/mentor_page.dart';
-import 'package:virtuohero/pages/profile_page.dart';
 import 'package:virtuohero/pages/roadmap_page.dart';
 import 'package:virtuohero/pages/scrum_page.dart';
 import 'package:virtuohero/pages/subpages/coming_soon_page.dart';

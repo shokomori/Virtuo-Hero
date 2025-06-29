@@ -3,6 +3,7 @@ import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:virtuohero/app_styles.dart';
 import 'package:virtuohero/class/message.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class MentorPage extends StatefulWidget {
   const MentorPage({super.key});
@@ -29,7 +30,17 @@ class _MentorPageState extends State<MentorPage> {
 
   
 
-  callGeminiModel() async{
+  Future<void> callGeminiModel() async{
+    // Check if API key exists
+    final apiKey = dotenv.env['GEMINI_API_KEY'];
+    if (apiKey == null || apiKey.isEmpty) {
+      setState(() {
+        _messages.add(Message(text: "API key not configured. Please check your .env file.", isUser: false));
+      });
+      return;
+    }
+
+    
     // Remove empty chat background
     if(_messages.isEmpty){
       setState(() {
@@ -53,7 +64,7 @@ class _MentorPageState extends State<MentorPage> {
         
       final model = GenerativeModel(
       model:'gemini-2.0-flash-exp', 
-      apiKey: "AIzaSyAAuAyvh-kgFCEfBSqUBobrB2-f3arJ_kw",
+      apiKey: apiKey,
       );
 
       // final content = [Content.text(userMessage)];
