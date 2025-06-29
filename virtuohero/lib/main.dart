@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'pages/opening_page.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+//import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void main() async {
   // dotenv
-  await dotenv.load(fileName: ".env");
+  //await dotenv.load(fileName: ".env");
   
   // init the hive
   await Hive.initFlutter();

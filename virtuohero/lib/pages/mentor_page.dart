@@ -17,6 +17,7 @@ class _MentorPageState extends State<MentorPage> {
   bool _isLoading = false; 
   bool _isEmptyChat = true;
   String? selectedNiche; // Add dropdown state
+  String apiKey = 'AIzaSyCvkV9y4tIuo5K3HGz12kLzO51cAmGnrCk';
   
   final List<Message> _messages = [];
 
@@ -31,16 +32,7 @@ class _MentorPageState extends State<MentorPage> {
   
 
   Future<void> callGeminiModel() async{
-    // Check if API key exists
-    final apiKey = dotenv.env['GEMINI_API_KEY'];
-    if (apiKey == null || apiKey.isEmpty) {
-      setState(() {
-        _messages.add(Message(text: "API key not configured. Please check your .env file.", isUser: false));
-      });
-      return;
-    }
 
-    
     // Remove empty chat background
     if(_messages.isEmpty){
       setState(() {
