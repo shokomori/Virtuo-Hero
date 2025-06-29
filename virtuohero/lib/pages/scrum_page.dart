@@ -134,7 +134,7 @@ class _ScrumPageState extends State<ScrumPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.white,
+      backgroundColor: AppColors.backgroundColor,
       
       // ─────────────────────────────────────────────────────────────────────
       // FLOATING ACTION BUTTON

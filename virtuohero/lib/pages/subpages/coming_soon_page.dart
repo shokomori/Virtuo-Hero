@@ -7,12 +7,13 @@ class ComingSoonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/mascot.png', height: 160),
+            Image.asset('assets/mascot3.png', height: 160),
             SizedBox(height: 5),
             Text(
               'Coming Soon!', 

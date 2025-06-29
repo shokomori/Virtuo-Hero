@@ -40,11 +40,11 @@ class _MainPageState extends State<MainPage> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context, false),
-              child: const Text('Cancel',style: AppTextStyles.heroColor,),
+              child: const Text('Cancel', style: AppTextStyles.heroColor),
             ),
             TextButton(
               onPressed: () => Navigator.pop(context, true),
-              child: Text('Log out',style: AppTextStyles.virtColor,),
+              child: Text('Log out', style: AppTextStyles.virtColor),
             ),
           ],
         ),
@@ -71,11 +71,11 @@ class _MainPageState extends State<MainPage> {
         bottomNavigationBar: BottomNavigationBar(
           iconSize: 30,
           selectedFontSize: 14,
-          selectedItemColor: AppColors.primary,
+          selectedItemColor: AppColors.secondary,
           unselectedItemColor: AppColors.darkGray,
           currentIndex: _selectedIndex,
           onTap: navigateBottomBar,
-          items: const [
+          items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_rounded),
               label: 'home',
@@ -85,7 +85,11 @@ class _MainPageState extends State<MainPage> {
               label: 'roadmap',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin),
+              icon: Image.asset(
+              'assets/mascot2.png',
+              width: 40,
+              height: 40,
+            ),
               label: 'mentor',
             ),
             BottomNavigationBarItem(

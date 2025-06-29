@@ -8,7 +8,7 @@ class AppColors {
   static const white = Color(0xFFFFFFFF);          // Pure White
   static const cream = Color(0xFFFFFDF3);          // Cream/Off-white
   static const darkGray = Color(0xFF414040);       // Dark Gray
-  static const backgroundColor = Color(0xFFEFF2F6);
+  static const backgroundColor = Color(0xFFF2F2F2);
   static const buttonColor = Color(0xFF00D9E5);
   static const mediumgray = Color(0xFF818181);
   static const blazeOrange = Color(0xFFFF5C02);
