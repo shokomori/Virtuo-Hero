@@ -130,6 +130,13 @@ class AppTextStyles {
     fontFamily: 'Afacad',
   );
 
+  static const trend = TextStyle(
+    fontSize: 20, 
+    color: AppColors.darkGray,
+    fontWeight: FontWeight.w700,
+    fontFamily: 'Afacad',
+  );
+
 
 }
 

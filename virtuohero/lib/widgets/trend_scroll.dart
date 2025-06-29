@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import '../app_styles.dart';
 
 class TrendingBox extends StatelessWidget {
   final String label;
+  final String? imagePath; // Optional image path
 
   const TrendingBox({
     super.key,
     required this.label,
+    this.imagePath,
   });
 
   @override
@@ -14,8 +17,11 @@ class TrendingBox extends StatelessWidget {
       width: 200,
       height: 100,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(12),
+        image: DecorationImage(
+          image: AssetImage(imagePath ?? 'assets/default.jpg'), // fallback to default
+          fit: BoxFit.cover,
+        ),
         boxShadow: const [
           BoxShadow(
             color: Colors.black12,
@@ -24,14 +30,30 @@ class TrendingBox extends StatelessWidget {
           ),
         ],
       ),
-      child: Center(
-        child: Text(
-          label,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
+      child: Stack(
+        children: [
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 40,
+              decoration: const BoxDecoration(
+                color: AppColors.secondary,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(6),
+                  bottomRight: Radius.circular(6),
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  label,
+                  style: AppTextStyles.trend,
+                ),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
