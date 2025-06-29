@@ -23,6 +23,8 @@ dev_dependencies:
   hive_generator: ^2.0.1
   build_runner: ^2.5.4
   flutter_markdown: ^0.7.0
+  flutter_svg: ^2.0.7
+  
 
 flutter:
   uses-material-design: true
@@ -33,6 +35,7 @@ flutter:
     - assets/mascot2.png
     - assets/mascot3.png
     - assets/mascot4.png
+    - assets/flame.svg
     - .env
 
   fonts:
