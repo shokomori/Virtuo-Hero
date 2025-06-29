@@ -137,7 +137,27 @@ class AppTextStyles {
     fontFamily: 'Afacad',
   );
 
+  static const darkgray = TextStyle(
+    color: AppColors.darkGray,
+    fontSize: 27,
+    fontWeight: FontWeight.w300,
+    fontFamily: 'Afacad',
+  );
 
+  static const logscrum = TextStyle(
+    color: AppColors.darkGray,
+    fontSize: 27,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Afacad',
+  );
+
+  static const savescrum = TextStyle(
+    color: AppColors.darkGray,
+    fontSize: 25,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Afacad',
+  );
+  
 }
 
 
