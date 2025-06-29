@@ -30,6 +30,7 @@ class AppTextStyles {
   static const welcome = TextStyle(
     fontSize: 35,
     fontWeight: FontWeight.w500,
+    height: 0,
     fontFamily: 'Afacad',
   );
 

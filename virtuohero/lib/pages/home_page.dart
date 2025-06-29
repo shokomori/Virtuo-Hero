@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import '../app_styles.dart';
 import '../widgets/virtuostreak.dart';
 import '../widgets/scrumbutton.dart';
@@ -12,6 +13,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> _scrums = [
+      " Learn HTML",
+      " Learn CSS",
+      " Build a Static Website",
+      " Learn Javascript",
+      " Learn Figma",
+    ];
+
+    final List<Widget> _scrumPages = [
+      ComingSoonPage(),
+      ComingSoonPage(),
+      ComingSoonPage(),
+      ComingSoonPage(),
+      ComingSoonPage(),
+    ];
+
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
@@ -56,7 +73,7 @@ class HomePage extends StatelessWidget {
                           children: [
                             const VirtuoStreak(),
                             const SizedBox(height: 0),
-                            const Text("69", style: AppTextStyles.streaknum),
+                            const Text("5", style: AppTextStyles.streaknum),
                             const SizedBox(height: 2),
                             Scrumbutton(onPressed: onScrumTap),
                           ],
@@ -76,7 +93,9 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 16),
+            Divider(color: AppColors.darkGray.withOpacity(0.3), thickness: 0.8),
+            const SizedBox(height: 7),
             const Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
@@ -145,6 +164,78 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(height: 16),
+            Divider(color: AppColors.darkGray.withOpacity(0.3), thickness: 0.8),
+            const SizedBox(height: 7),
+            const Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text(
+                'Recent Achievements:',
+                style: AppTextStyles.welcome,
+              ),
+            ),
+
+            // Boxed Entries List (customizable)
+            Expanded(
+              child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                itemCount: _scrums.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => _scrumPages[index],
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: AppColors.white,
+                        border: Border.all(
+                          color: AppColors.secondary.withOpacity(0.7),
+                          width: 2.0,
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.08),
+                            spreadRadius: 1,
+                            blurRadius: 4,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/trophy.svg',
+                            width: 24,
+                            height: 24,
+                            colorFilter: const ColorFilter.mode(
+                              AppColors.secondary,
+                              BlendMode.srcIn,
+                            ),
+                          ),
+                          const SizedBox(width: 12),
+                          Text(
+                            _scrums[index],
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.darkGray,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),

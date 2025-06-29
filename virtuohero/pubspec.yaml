@@ -35,6 +35,7 @@ flutter:
     - assets/mascot3.png
     - assets/mascot4.png
     - assets/flame.svg
+    - assets/trophy.svg
 
   fonts:
   - family: Afacad
