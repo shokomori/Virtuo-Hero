@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:virtuohero/pages/subpages/coming_soon_page.dart';
 import '../../app_styles.dart';
 import 'main_page.dart';
 import '../widgets/appname.dart';
+import 'package:flutter/gestures.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -169,10 +171,18 @@ class _SecondPageState extends State<LoginPage> {
                             width: 292,
                             child: Align(
                               alignment: Alignment.centerRight,
-                              child: Text(
-                                'Forgot Password?',
-                                style: AppTextStyles.fpass,
-                                textAlign: TextAlign.right,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const ComingSoonPage()),
+                                  );
+                                },
+                                child: Text(
+                                  'Forgot Password?',
+                                  style: AppTextStyles.fpass,
+                                  textAlign: TextAlign.right,
+                                ),
                               ),
                             ),
                           ),
@@ -185,17 +195,26 @@ class _SecondPageState extends State<LoginPage> {
                                 textAlign: TextAlign.center,
                                 text: TextSpan(
                                   style: AppTextStyles.fpass,
-                                  children: const [
-                                    TextSpan(
+                                  children: [
+                                    const TextSpan(
                                       text: "Don't have an account? ",
                                       style: TextStyle(color: Color(0xFF414040)),
                                     ),
                                     TextSpan(
                                       text: 'Sign up',
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: Color(0xFF00B2FF),
                                         fontWeight: FontWeight.bold,
                                       ),
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => const ComingSoonPage(), // Replace with SignUpPage if needed
+                                            ),
+                                          );
+                                        },
                                     ),
                                   ],
                                 ),
