@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import '../app_styles.dart';
 import '../widgets/virtuostreak.dart';
 import '../widgets/scrumbutton.dart';
-import '../widgets/trend_scroll.dart';
+import '../widgets/trend_scroll.dart'; 
+import 'subpages/coming_soon_page.dart';
 
 class HomePage extends StatelessWidget {
-  final VoidCallback onScrumTap; // ✅ accept the function
+  final VoidCallback onScrumTap;
 
   const HomePage({super.key, required this.onScrumTap});
 
@@ -57,7 +58,7 @@ class HomePage extends StatelessWidget {
                             const SizedBox(height: 0),
                             const Text("69", style: AppTextStyles.streaknum),
                             const SizedBox(height: 2),
-                            Scrumbutton(onPressed: onScrumTap), // ✅ fixed
+                            Scrumbutton(onPressed: onScrumTap),
                           ],
                         ),
                       ),
@@ -89,14 +90,58 @@ class HomePage extends StatelessWidget {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                children: const [
-                  TrendingBox(label: 'Trend 1', imagePath: 'assets/mascot4.png'),
-                  SizedBox(width: 10),
-                  TrendingBox(label: 'Trend 2', imagePath: 'assets/mascot3.png'),
-                  SizedBox(width: 10),
-                  TrendingBox(label: 'Trend 3', imagePath: 'assets/mascot2.png'),
-                  SizedBox(width: 10),
-                  TrendingBox(label: 'Trend 4', imagePath: 'assets/mascot.png'),
+                children: [
+                  TrendingBox(
+                    label: 'Trend 1',
+                    imagePath: 'assets/mascot4.png',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const ComingSoonPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(width: 10),
+                  TrendingBox(
+                    label: 'Trend 2',
+                    imagePath: 'assets/mascot3.png',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const ComingSoonPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(width: 10),
+                  TrendingBox(
+                    label: 'Trend 3',
+                    imagePath: 'assets/mascot2.png',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const ComingSoonPage(),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(width: 10),
+                  TrendingBox(
+                    label: 'Trend 4',
+                    imagePath: 'assets/mascot.png',
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const ComingSoonPage(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
