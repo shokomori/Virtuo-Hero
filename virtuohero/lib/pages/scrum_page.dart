@@ -139,14 +139,18 @@ class _ScrumPageState extends State<ScrumPage> {
       // ─────────────────────────────────────────────────────────────────────
       // FLOATING ACTION BUTTON
       // ─────────────────────────────────────────────────────────────────────
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: _createNewScrum,
-        backgroundColor: AppColors.primary,
-        foregroundColor: AppColors.white,
-        icon: Icon(Icons.add_box_outlined),
-        label: Text(
-          "Log Scrum",
-          style: TextStyle(fontWeight: FontWeight.w600),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, 
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 220,bottom: 80),
+        child: FloatingActionButton.extended(
+          onPressed: _createNewScrum,
+          backgroundColor: AppColors.primary,
+          foregroundColor: AppColors.white,
+          icon: Icon(Icons.add_box_outlined),
+          label: Text(
+            "Log Scrum",
+            style: TextStyle(fontWeight: FontWeight.w600),
+          ),
         ),
       ),
       

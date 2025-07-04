@@ -63,14 +63,14 @@ class AppTextStyles {
   );
 
   static const bold = TextStyle(
-    color: AppColors.darkGray,
+    color: AppColors.white,
     fontSize: 20,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',
   );
 
   static const fpass = TextStyle(
-    color: AppColors.darkGray,
+    color: AppColors.primary,
     fontSize: 15,
     fontWeight: FontWeight.bold,
     fontFamily: 'Afacad',

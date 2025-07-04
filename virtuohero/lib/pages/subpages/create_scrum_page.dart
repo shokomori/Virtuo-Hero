@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:virtuohero/app_styles.dart';
 import 'package:virtuohero/pages/subpages/coming_soon_page.dart';
+import 'package:virtuohero/widgets/background.dart';
 import '../../widgets/customappbar.dart';
 
 class CreateScrumPage extends StatelessWidget {
@@ -10,8 +11,9 @@ class CreateScrumPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(showBackButton: true),
-      backgroundColor: AppColors.backgroundColor,
-      body: SafeArea(
+      body: BackgroundContainer(
+        opacity: 0.4,
+        child: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -145,6 +147,7 @@ class CreateScrumPage extends StatelessWidget {
             ],
           ),
         ),
+      ),
       ),
     );
   }

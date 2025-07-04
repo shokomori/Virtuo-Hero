@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:virtuohero/app_styles.dart';
+import 'package:virtuohero/widgets/background.dart';
 
 class ComingSoonPage extends StatelessWidget {
   const ComingSoonPage({super.key});
@@ -7,9 +8,10 @@ class ComingSoonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(),
-      body: Center(
+      body: BackgroundContainer(
+        opacity: 0.4,
+        child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -30,6 +32,7 @@ class ComingSoonPage extends StatelessWidget {
             ),
         ],
         ),
+      ),
       ),
     );
   }

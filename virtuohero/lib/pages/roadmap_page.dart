@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:virtuohero/app_styles.dart';
 import 'package:virtuohero/pages/subpages/createRoadMap_page.dart';
+import 'package:virtuohero/widgets/background.dart';
 
 class RoadmapPage extends StatefulWidget {
   const RoadmapPage({super.key});
@@ -14,7 +15,9 @@ class _RoadmapPageState extends State<RoadmapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: BackgroundContainer(
+        opacity: 0.4,
+        child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -63,6 +66,7 @@ class _RoadmapPageState extends State<RoadmapPage> {
               )
           ],
         ),
+      ),
       ),
     );
   }
